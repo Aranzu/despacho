@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ingreso_orden',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://18.207.25.202",
     "18.207.25.202",
     "http://127.0.0.1:8000/",
-    "3.88.62.216"
 ]
 
 ROOT_URLCONF = 'despacho.urls'
