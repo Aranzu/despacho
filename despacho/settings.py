@@ -25,12 +25,13 @@ SECRET_KEY = '@tt0su(doz)gmrzm1%7w9lryen4$mbn8=4e-07ol8hb$5=#ej('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['18.207.25.202','127.0.0.1','localhost','3.83.24.216','3.88.62.216']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +53,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://18.207.25.202",
+    "18.207.25.202",
+    "http://127.0.0.1:8000/",
+    "3.88.62.216"
+]
 
 ROOT_URLCONF = 'despacho.urls'
 
