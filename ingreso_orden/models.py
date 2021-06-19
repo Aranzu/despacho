@@ -7,7 +7,6 @@ class OrdenRetiro(models.Model):
     nombre_cl = models.CharField(max_length=100)
     nombre_pro = models.CharField(max_length=500)
     direccion = models.CharField(max_length=100)
-    telefono = models.CharField(max_length=20)
 
     def __str__(self):
         return self.rut
