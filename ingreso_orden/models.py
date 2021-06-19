@@ -5,9 +5,9 @@ class OrdenRetiro(models.Model):
     num_solicitud = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=100)
     nombre_cl = models.CharField(max_length=100)
-    nombre_pro = models.CharField(max_length=100)
+    nombre_pro = models.CharField(max_length=500)
     direccion = models.CharField(max_length=100)
-    telefono = models.IntegerField()
+    telefono = models.CharField(max_length=20)
 
     def __str__(self):
         return self.rut
