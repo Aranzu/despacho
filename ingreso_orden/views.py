@@ -31,3 +31,13 @@ def orden_detail_view(request):
         return Response(serializer.errors)
 
     return Response(serializer.data)
+
+@api_view(['GET'])
+def orden_detail_view2(request,pk=None):
+	if request.method == 'GET':
+		ordenRetiro = OrdenRetiro.objects.filter(num_solicitud=pk).first()
+		if ordenRetiro == None:
+			return Response("No existe la orden de retiro ingresada.")
+		else:
+			ordenRetiro_serializer= OrdenRetiroSerializer(ordenRetiro)
+			return Response(ordenRetiro_serializer.data)

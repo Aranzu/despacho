@@ -10,7 +10,6 @@ class OrdenRetiro(models.Model):
     email = models.EmailField()
     direccion = models.CharField(max_length=100)
     nombre_pro = models.CharField(max_length=500)
-    direccion = models.CharField(max_length=100)
     estado_orden = models.CharField(max_length=100, default='Pendiente')
 
     def __str__(self):
