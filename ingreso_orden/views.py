@@ -35,7 +35,7 @@ def orden_detail_view(request):
 @api_view(['GET'])
 def orden_detail_view2(request,pk=None):
 	if request.method == 'GET':
-		ordenRetiro = OrdenRetiro.objects.filter(num_solicitud=pk).first()
+		ordenRetiro = OrdenRetiro.objects.filter(rut=pk).first()
 		if ordenRetiro == None:
 			return Response("No existe la orden de retiro ingresada.")
 		else:
