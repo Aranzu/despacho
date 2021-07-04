@@ -23,14 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@tt0su(doz)gmrzm1%7w9lryen4$mbn8=4e-07ol8hb$5=#ej('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.88.62.216','18.207.25.202','127.0.0.1','localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +53,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://3.88.62.216",
+    "http://18.207.25.202",
+    "http://127.0.0.1:8000",
+    
+]
 
 
 ROOT_URLCONF = 'despacho.urls'
@@ -124,7 +131,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/static/',
-]
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
